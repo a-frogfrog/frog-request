@@ -1,0 +1,16 @@
+{
+  "name": "frog-request",
+  "version": "0.0.1",
+  "type": "module",
+  "private": false,
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {},
+  "keywords": [
+    "frog",
+    "request"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0"
+}
