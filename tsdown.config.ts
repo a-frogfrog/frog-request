@@ -9,4 +9,11 @@ export default defineConfig({
     level: 'error', // 'warning' | 'error' | 'suggestion'
   },
   attw: true,
+  inputOptions: {
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
+  },
 })
