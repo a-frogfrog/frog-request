@@ -12,22 +12,38 @@
     "name": "Silas",
     "email": "frogfrog7423@gmail.com"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "type": "module",
-  "main": "src/index.ts",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "spellcheck": "cspell lint \"(packages|apps)/**/*.{js,ts,mjs,cjs,json,css,scss,md,html,tsx,jsx,less,sass,scss,vue}\"",
+    "spellcheck": "cspell .",
     "commit": "git-cz",
     "prepare": "husky",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lintall": "pnpm run lint && pnpm run fmt && pnpm run spellcheck"
   },
   "dependencies": {
     "axios": "^1.12.2"
   },
   "devDependencies": {
+    "@arethetypeswrong/core": "^0.18.2",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@cspell/dict-lorem-ipsum": "^4.0.5",
@@ -37,7 +53,11 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0"
+    "oxlint": "^1.56.0",
+    "publint": "^0.3.18",
+    "tsdown": "^0.21.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
   },
   "peerDependencies": {
     "axios": "^1.12.2"
