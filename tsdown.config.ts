@@ -1,4 +1,5 @@
 import { defineConfig } from 'tsdown'
+import { alias } from './ailas.config'
 
 export default defineConfig({
   entry: ['./src/index.ts'],
@@ -11,9 +12,7 @@ export default defineConfig({
   attw: true,
   inputOptions: {
     resolve: {
-      alias: {
-        '@': '/src',
-      },
+      alias,
     },
   },
 })

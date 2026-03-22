@@ -16,7 +16,7 @@ async function retryRequest<T>(options: RetryRequestOptions): Promise<T> {
   try {
     return await fn()
   } catch (error) {
-    if (retries <= 0) throw error
+    if (retries < 0) throw error
 
     await new Promise((resolve) => setTimeout(resolve, delay))
 
