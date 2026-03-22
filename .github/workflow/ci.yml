@@ -1,0 +1,38 @@
+name: CI/
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+        # 安装 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      # 配置 Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+        # 安装依赖
+      - name: Install dependencies
+        run: pnpm install
+
+        # 运行全部 lint 
+      - name: Run Lint All
+        run: pnpm lintall
+
+
+      # 构建项目
+      - name: Build Project
+        run: pnpm build

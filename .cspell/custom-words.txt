@@ -1,2 +1,4 @@
 oxlint
 oxfmt
+attw
+lintall
