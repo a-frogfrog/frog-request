@@ -50,7 +50,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": [
       "pnpm run lint:fix",
-      "pnpm run oxfmt --no-error-on-unmatched-pattern"
+      "pnpm run fmt --no-error-on-unmatched-pattern"
     ]
   },
   "engines": {
