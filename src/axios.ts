@@ -3,14 +3,12 @@ import axios, {
   type AxiosRequestConfig,
   type AxiosResponse,
   type InternalAxiosRequestConfig,
-} from 'axios';
+} from "axios";
 
 type CreateAxiosRequestOptions = AxiosRequestConfig & {
   handleRequestError?: (error: AxiosError) => Promise<AxiosError>;
   handleResponseError?: (error: AxiosError) => Promise<AxiosError>;
-  handleRequestSuccess?: (
-    config: InternalAxiosRequestConfig,
-  ) => InternalAxiosRequestConfig;
+  handleRequestSuccess?: (config: InternalAxiosRequestConfig) => InternalAxiosRequestConfig;
   handleResponseSuccess?: (response: AxiosResponse) => AxiosResponse;
 };
 
@@ -22,7 +20,7 @@ type CreateAxiosRequestOptions = AxiosRequestConfig & {
 export function createAxiosRequest(options: CreateAxiosRequestOptions) {
   // 创建 axios 实例
   const instance = axios.create({
-    baseURL: options.baseURL || '/api',
+    baseURL: options.baseURL || "/api",
     timeout: options.timeout || 10000,
     headers: options.headers || {},
     ...options,
