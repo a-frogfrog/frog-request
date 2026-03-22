@@ -24,11 +24,6 @@
     "prepare": "husky",
     "precommit": "lint-staged"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
-  },
   "dependencies": {
     "axios": "^1.12.2"
   },
@@ -52,6 +47,11 @@
       "pnpm run lint:fix",
       "pnpm run fmt --no-error-on-unmatched-pattern"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "engines": {
     "node": ">=22.18.0",
