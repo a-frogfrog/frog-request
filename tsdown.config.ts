@@ -1,5 +1,5 @@
 import { defineConfig } from 'tsdown'
-import { alias } from './ailas.config'
+import { alias } from './ailas.config.js'
 
 export default defineConfig({
   entry: ['./src/index.ts'],
