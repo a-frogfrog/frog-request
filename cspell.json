@@ -17,6 +17,8 @@
     "**/out/**",
     "**/public/**",
     ".**/.git/**",
-    ".gitignore"
+    ".gitignore",
+    "**-lock.**",
+    "tsconfig*.json"
   ]
 }

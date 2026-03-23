@@ -28,10 +28,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-        # 运行全部 lint 
+        # 运行全部 lint
       - name: Run Lint All
         run: pnpm lintall
-
 
       # 构建项目
       - name: Build Project
